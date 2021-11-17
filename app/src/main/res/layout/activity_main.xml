@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/spinner_id"
+
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="@color/white"
+        app:tabIndicatorColor="#D74488BE"
+        app:tabIndicatorHeight="3.5dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#D74488BE"
+        app:tabTextColor="#748B8A8A">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="home" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Sports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sports" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Science"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Science" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Business"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Business" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Entertainment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entertainment" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health" />
+
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tech" />
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <ProgressBar
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/progreesBar_id"
+        android:visibility="gone"
+     android:progressTint="#D74488BE"
+        android:progressBackgroundTint="#D74488BE"
+        android:layout_gravity="center"/>
+    <ListView
+        android:id="@+id/listViwe_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:listSelector="#56565656"
+        android:padding="5dp" />
+</LinearLayout>

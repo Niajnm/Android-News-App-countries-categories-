@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Arg News</string>
+    <string name="intro"> News App is a mobile news system which run under Android platform that used for your own news choice.
+        With powerful and Responsive Admin Panel can manage news category, news item,
+        app profile information, etc.
+        This application created by Android for client side and then JAVA for Admin side.
+        Run under Android platform which is the most popular operating system in the world. Using this
+        application you can entertain yourself</string>
+
+    <string-array name="country_name">
+        <item>USA</item>
+        <item>China</item>
+        <item>India</item>
+        <item>United Arab Emirates</item>
+        <item>Argentina</item>
+        <item>Canada</item>
+        <item>Hongkong</item>
+        <item>Japan</item>
+        <item>Bangladesh</item>
+
+        <item>Pakistan</item>
+
+    </string-array>
+
+</resources>
