@@ -54,8 +54,6 @@ public class CustomAdapter extends BaseAdapter {
         TextView title= convertView.findViewById(R.id.TextViewTitle_id);
         TextView details= convertView.findViewById(R.id.textviewDetail_id);
         ImageView newsimg= convertView.findViewById(R.id.imgFlag_id);
-
-
             title.setText(wdata.get(position).head);
             details.setText(wdata.get(position).descib);
                String s=wdata.get(position).imgurl;

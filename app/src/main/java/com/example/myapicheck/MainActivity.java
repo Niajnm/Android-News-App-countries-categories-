@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     TabLayout tabLayout;
     ListView listView;
-//    ImageButton imageButtonShare;
     Spinner spinner;
     ProgressBar progressBar;
     ArrayAdapter<String> country;
@@ -54,14 +53,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listViwe_id);
         spinner = findViewById(R.id.spinner_id);
-    //    imageButtonShare = findViewById(R.id.imagebutton_share);
         tabLayout = findViewById(R.id.tablayout_id);
         progressBar = findViewById(R.id.progreesBar_id);
         countryarray = getResources().getStringArray(R.array.country_name);
-
         country = new ArrayAdapter(MainActivity.this, R.layout.support_simple_spinner_dropdown_item, countryarray);
         spinner.setAdapter(country);
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
             @Override
@@ -88,19 +84,16 @@ public class MainActivity extends AppCompatActivity {
                     category = "technology";
                     request();
                 }
-
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
             }
+
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
-
-
-
     }
 
     @Override
@@ -111,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(MainActivity.this, countryarray[position] + " selected", Toast.LENGTH_SHORT).show();
                 countrySet(countryarray[position]);
-
             }
 
             @Override
@@ -140,38 +132,30 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_TEXT, head);
             startActivity(Intent.createChooser(intent, "Share with"));
             Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
-
         }
 
         if (item.getItemId() == R.id.menuSetting_id) {
-
             Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
         }
-
         if (item.getItemId() == R.id.menuSearch_id) {
-
         }
         if (item.getItemId() == R.id.menuFeedback_id) {
-
-            startActivity(new Intent(getApplicationContext(), webActivity.class)
-                    .putExtra("pos", "position"));
+            Intent intent = new Intent(MainActivity.this, FeedbackActivity.class);
+            startActivity(intent);
             Toast.makeText(this, "Feedback", Toast.LENGTH_SHORT).show();
         }
         if (item.getItemId() == R.id.menuAbout_id) {
             Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this,AboutActivity.class);
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
-
         }
         return super.onOptionsItemSelected(item);
     }
 
     public void tabselection() {
-
     }
 
     private void countrySet(String s) {
-
         if (s.equals("USA")) {
             city = "us";
             request();
@@ -229,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(MainActivity.this, webActivity.class);
 
-                        intent.putExtra("url",wdata.get(position).singleUrl);
+                        intent.putExtra("url", wdata.get(position).singleUrl);
                         startActivity(intent);
                     }
                 });
@@ -247,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     public ArrayList<Data> fromjson(JSONObject jsonObject) {
         try {
             /*Data newsdata = new Data();
@@ -266,7 +251,6 @@ public class MainActivity extends AppCompatActivity {
             return newsArrayList;
         } catch (JSONException e) {
             e.printStackTrace();
-
             return null;
         }
     }

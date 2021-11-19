@@ -6,6 +6,11 @@
         This application created by Android for client side and then JAVA for Admin side.
         Run under Android platform which is the most popular operating system in the world. Using this
         application you can entertain yourself</string>
+    <string name="me">
+        NIAJ MAHMUD\nCSTE at Nanjing University of Posts and Telecommunications.
+
+    </string>
+    <string name="link"><a href="https://twitter.com/NiajNm">NiajNm</a></string>
 
     <string-array name="country_name">
         <item>USA</item>

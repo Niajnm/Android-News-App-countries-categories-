@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,14 +27,33 @@ public class webActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
-
         assert getSupportActionBar() != null;   //null check
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);   //show back button
-
         webView = findViewById(R.id.webView_id);
         progressBar = findViewById(R.id.webProgress_id);
+        geturl();
+    }
 
+    public class WebViewClient extends android.webkit.WebViewClient {
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+        }
 
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            progressBar.setVisibility(View.GONE);
+        }
+    }
+
+    private void geturl() {
         Intent intent = getIntent();
         URl = intent.getStringExtra("url");
         WebSettings webSettings = webView.getSettings();
@@ -41,9 +61,6 @@ public class webActivity extends AppCompatActivity {
         webSettings.setPluginState(WebSettings.PluginState.ON);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(URl);
-
-        progressBar.setVisibility(View.GONE);
-
     }
 
     @Override
@@ -51,6 +68,7 @@ public class webActivity extends AppCompatActivity {
         finish();
         return true;
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
