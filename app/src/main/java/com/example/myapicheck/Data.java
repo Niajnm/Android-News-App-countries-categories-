@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 public class Data {
 
-    String head, descib,imgurl,singleUrl;
+    String head, descib, imgurl, singleUrl;
 
     public String getSingleUrl() {
         return singleUrl;
